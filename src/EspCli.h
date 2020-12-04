@@ -2,6 +2,7 @@
 #define EspCli_h
 
 #include<Arduino.h>
+#include<Esp8266WiFi>
 
 class EspCli
 {
