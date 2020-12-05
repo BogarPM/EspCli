@@ -1,9 +1,25 @@
 #include "EspCli.h"
 #include "Arduino.h"
+#include<String.h>
+#include<ESP8266WiFi.h>
+#include<ESP8266HTTPClient.h>
+
+//EspCli::_url = "http://example.org";
 
 EspCli::EspCli(){
-    _ssid = "TROYANO";
-    _psw = "8363269005";
+    _ssid = MAIN-SSID;
+    
+}
+
+EspCli::EspCli(WiFiClient cl, const String url){
+    //_ssid = "TROYANO";
+    //_psw = "8363269005";
+    cl.
+    setUrl("http://example.org");
+    //_url = url.toCharArray();
+    _client = cl;
+    //_httpClient.begin(_client, _url);
+    begin(cl,url);
 }
 
 EspCli::~EspCli(){
@@ -17,4 +33,12 @@ char* EspCli::ssid(){
 
 char* EspCli::psw(){
     return _psw;
+}
+
+void EspCli::setWiFiClient(WiFiClient cl){
+    _client = cl;
+    _httpClient.begin(_client,_url);
+}
+void EspCli::setUrl(char* url){
+    _url = url;
 }
