@@ -1,11 +1,11 @@
 #include<Arduino.h>
 #include<EspCli.h>
 #include<ESP8266WiFi.h>
-//#include<ESP8266HTTPClient.h>
+#include<ESP8266HTTPClient.h>
 
 WiFiClient wcl;
 EspCli cl;
-
+char* url = "https://example.org";
 void setup() {
   Serial.begin(115200);
 
@@ -17,7 +17,9 @@ void setup() {
   }
   Serial.print('\n');
   Serial.println("Connected");
-  
+  cl.setUrl(url);
+  cl.setWiFiClient(wcl);
+  Serial.println("EspCli HTTP client started");
   /*Serial.print("Client SSID: ");
   Serial.println(cl.ssid());
   Serial.print("Client PSW: ");
