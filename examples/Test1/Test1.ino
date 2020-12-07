@@ -17,8 +17,8 @@ void setup() {
   }
   Serial.print('\n');
   Serial.println("Connected");
-  cl.setUrl(url);
-  cl.setWiFiClient(wcl);
+  //cl.setUrl(url);
+  //cl.setWiFiClient(wcl);
   Serial.println("EspCli HTTP client started");
   /*Serial.print("Client SSID: ");
   Serial.println(cl.ssid());
