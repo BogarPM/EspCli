@@ -12,13 +12,10 @@ EspCli::EspCli(){
 }
 
 EspCli::EspCli(WiFiClient cl, const String url){
-    //_ssid = "TROYANO";
-    //_psw = "8363269005";
-    cl.
+    _ssid = "TROYANO";
+    _psw = "8363269005";
     setUrl("http://example.org");
-    //_url = url.toCharArray();
     _client = cl;
-    //_httpClient.begin(_client, _url);
     begin(cl,url);
 }
 
